@@ -642,25 +642,31 @@
         const h = parseInt(dom.blankH.value) || 600;
         const bg = dom.blankBg.value;
 
-        state.canvas.clear();
-        state.canvas.setWidth(w);
-        state.canvas.setHeight(h);
-        state.canvas.setBackgroundColor(bg, state.canvas.renderAll.bind(state.canvas));
-        state.bgImageObj = null;
-        state.originalImage = null;
-        state.realWidth = w;
-        state.realHeight = h;
-
-        dom.resizeW.value = w;
-        dom.resizeH.value = h;
-        dom.imageSize.textContent = w + ' x ' + h;
-        updateCanvasInfo();
-
+        // Show editor FIRST so canvas is visible before resizing
+        // (Fabric.js can't properly size a canvas inside display:none)
         hideModal('blankCanvasModal');
         showEditor();
-        saveHistory();
-        setTimeout(() => zoomToFit(), 50);
-        showToast('Blank canvas created!', 'success');
+
+        setTimeout(() => {
+            state.canvas.clear();
+            state.canvas.setWidth(w);
+            state.canvas.setHeight(h);
+            state.canvas.setBackgroundColor(bg, state.canvas.renderAll.bind(state.canvas));
+
+            state.bgImageObj = null;
+            state.originalImage = null;
+            state.realWidth = w;
+            state.realHeight = h;
+
+            dom.resizeW.value = w;
+            dom.resizeH.value = h;
+            dom.imageSize.textContent = w + ' x ' + h;
+            updateCanvasInfo();
+
+            saveHistory();
+            zoomToFit();
+            showToast('Blank canvas created!', 'success');
+        }, 50);
     }
 
     // ===== SCREEN MANAGEMENT =====
