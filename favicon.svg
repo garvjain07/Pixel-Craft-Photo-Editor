@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>PixelCraft logo</title>
+  <rect width="64" height="64" rx="14" fill="#0d1117"/>
+  <path d="M17 43 40.5 19.5a6 6 0 0 1 8.5 8.5L25.5 51.5 16 53l1-10Z" fill="#4da3ff"/>
+  <path d="m39 21 4 4" stroke="#0d1117" stroke-width="3" stroke-linecap="round"/>
+  <path d="m13 14 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z" fill="#a78bfa"/>
+</svg>

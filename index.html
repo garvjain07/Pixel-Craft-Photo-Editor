@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PixelCraft is a fast, browser-based photo editor for cropping, resizing, filtering, drawing, and exporting images.">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pixel-craft-photo-editor.vercel.app/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PixelCraft - Professional Photo Editor">
+    <meta property="og:description" content="Edit, enhance, and export your images directly in your browser with PixelCraft.">
+    <meta property="og:url" content="https://pixel-craft-photo-editor.vercel.app/">
+    <meta name="twitter:card" content="summary">
     <title>PixelCraft - Professional Photo Editor</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PixelCraft",
+        "url": "https://pixel-craft-photo-editor.vercel.app/",
+        "description": "A browser-based professional photo editor.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any"
+    }
+    </script>
 </head>
 <body>
     <!-- ==================== SPLASH / WELCOME SCREEN ==================== -->
@@ -987,7 +1012,7 @@
                     </div>
                 </div>
                 <div class="export-preview">
-                    <img id="exportPreview" src="" alt="Preview">
+                    <img id="exportPreview" src="" alt="Export preview" loading="lazy" decoding="async">
                     <span id="exportFileSize">Estimated: 0 KB</span>
                 </div>
             </div>
@@ -1043,6 +1068,6 @@
     <!-- ===== TOAST NOTIFICATIONS ===== -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
